@@ -1,18 +1,7 @@
 import { CORE_CONCEPTS } from './data';
-import Header from './components/Header';
-import CoreConcept from './components/CoreConcept';
-
-// function UserData(){
-//   const user = {first:"George", last:"Salayka", age:"40"};
-
-//   return(
-//     <div>
-//       <h2>Name: {user.last}, {user.first}</h2>
-//       <h3>Age: {user.age}</h3>
-//     </div>
-//   )
-// }
-
+import Header from './components/Header/Header';
+import CoreConcept from './components/CoreConcepts/CoreConcept';
+import TabButton from './components/TabButton/TabButton';
 
 
 
@@ -48,6 +37,15 @@ function App() {
             //CORE_CONCEPTS.map((concept)=><CoreConcept {...concept}/>)
           }
         </ul>
+        </section>
+        <section id='examples'>
+          <h2>Examples</h2>
+          <menu>
+            <TabButton>Components</TabButton>
+            <TabButton>JSX</TabButton>
+            <TabButton>Props</TabButton>
+            <TabButton>State</TabButton>
+          </menu>
         </section>
       </main>
     </div>
