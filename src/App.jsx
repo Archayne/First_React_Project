@@ -8,37 +8,17 @@ import Examples from './components/Examples/Examples';
 
 
 function App() {
-  const [selectedTopic, setSelectedTopic] = useState();
-  console.log("App is rendered");
-  let tabContent = <p>Please select a topic</p>;
-  if(selectedTopic){
-    tabContent = (
-          <Examples topic={selectedTopic} />
-        );
-  }
 
-  function handleSelect(selectedButton){
-    setSelectedTopic(selectedButton);
-    console.log(selectedTopic);
-  }
-  return (
-    <>
+  return(
+    <div>
       <Header />
       <main>
         <CoreConcepts />
-        <section id='examples'>
-          <h2>Examples</h2>
-          <menu>
-            <TabButton isSelected={selectedTopic==="components"} onClick={()=>handleSelect("components")}>Components</TabButton>
-            <TabButton isSelected={selectedTopic==="jsx"} onClick={()=>handleSelect("jsx")}>JSX</TabButton>
-            <TabButton isSelected={selectedTopic==="props"} onClick={()=>handleSelect("props")}>Props</TabButton>
-            <TabButton isSelected={selectedTopic==="state"} onClick={()=>handleSelect("state")}>State</TabButton>
-          </menu>
-          {tabContent}
-        </section>
+        <Examples />
       </main>
-    </>
+    </div>
   );
+  
 }
 
 export default App;
